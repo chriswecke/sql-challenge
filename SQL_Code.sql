@@ -40,3 +40,18 @@ INSERT INTO dept_manager(dept_no,emp_no) VALUES ('d009',111692);
 INSERT INTO dept_manager(dept_no,emp_no) VALUES ('d009',111784);
 INSERT INTO dept_manager(dept_no,emp_no) VALUES ('d009',111877);
 INSERT INTO dept_manager(dept_no,emp_no) VALUES ('d009',111939);
+
+CREATE TABLE IF NOT EXISTS titles(
+   title_id VARCHAR(5) NOT NULL PRIMARY KEY
+  ,title    VARCHAR(18) NOT NULL
+);
+INSERT INTO titles(title_id,title) VALUES ('s0001','Staff');
+INSERT INTO titles(title_id,title) VALUES ('s0002','Senior Staff');
+INSERT INTO titles(title_id,title) VALUES ('e0001','Assistant Engineer');
+INSERT INTO titles(title_id,title) VALUES ('e0002','Engineer');
+INSERT INTO titles(title_id,title) VALUES ('e0003','Senior Engineer');
+INSERT INTO titles(title_id,title) VALUES ('e0004','Technique Leader');
+INSERT INTO titles(title_id,title) VALUES ('m0001','Manager');
+
+
+
