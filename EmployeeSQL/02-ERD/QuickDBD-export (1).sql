@@ -4,7 +4,7 @@
 -- Modify this code to update the DB schema diagram.
 -- To reset the sample schema, replace everything with
 -- two dots ('..' - without quotes).
-
+DROP TABLE IF EXISTS "departments";
 CREATE TABLE "departments" (
     "dept_no" CHAR(4)   NOT NULL,
     "dept_name" VARCHAR(100)   NOT NULL,
@@ -12,17 +12,19 @@ CREATE TABLE "departments" (
         "dept_no"
      )
 );
-
+DROP TABLE IF EXISTS "dept_emp";
 CREATE TABLE "dept_emp" (
     "emp_no" INTEGER   NOT NULL,
     "dept_no" CHAR(4)   NOT NULL
 );
 
+DROP TABLE if exists "dept_manager";
 CREATE TABLE "dept_manager" (
     "dept_no" CHAR(4)   NOT NULL,
     "emp_no" INTEGER   NOT NULL
 );
 
+DROP TABLE if exists "employees";
 CREATE TABLE "employees" (
     "emp_no" INTEGER   NOT NULL,
     "birth_date" DATE   NOT NULL,
@@ -35,11 +37,13 @@ CREATE TABLE "employees" (
      )
 );
 
+DROP TABLE if exists "salaries";
 CREATE TABLE "salaries" (
     "emp_no" INTEGER   NOT NULL,
     "salary" INTEGER   NOT NULL
 );
 
+DROP TABLE if exists "titles";
 CREATE TABLE "titles" (
     "emp_no" INTEGER   NOT NULL,
     "title" VARCHAR(100)   NOT NULL
