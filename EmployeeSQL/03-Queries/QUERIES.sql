@@ -5,9 +5,9 @@ INNER JOIN salaries ON
 employees.emp_no=salaries.emp_no;
 
 --2. List first name, last name, and hire date for employees who were hired in 1986.
-SELECT employees.first_name, employees.last_name, employees.hire_date
-FROM employees
-WHERE hire_date LIKE '%1986';
+SELECT Employees.first_name, Employees.last_name, Employees.hire_date
+FROM Employees
+WHERE (((Employees.hire_date) >= '1986-01-01' And (Employees.hire_date)< '1987-01-01' ));
 	
 --3. List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
 SELECT dept_manager.dept_no, departments.dept_name, employees.emp_no, employees.last_name, employees.first_name
@@ -33,19 +33,19 @@ WHERE first_name = 'Hercules' and last_name LIKE 'B%';
 --6. List all employees in the Sales department, including their employee number, last name, first name, and department name.
 SELECT employees.emp_no, employees.last_name, employees.first_name, departments.dept_name
 FROM employees
-  JOIN dept_employees
-  ON employees.emp_no=dept_employees.emp_no
+  JOIN dept_emp
+  ON employees.emp_no=dept_emp.emp_no
     JOIN departments
-    ON dept_employees.dept_no=departments.dept_no
+    ON dept_emp.dept_no=departments.dept_no
 	WHERE departments.dept_name = 'Sales';
 
 --7. List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
 SELECT employees.emp_no, employees.last_name, employees.first_name, departments.dept_name
 FROM employees
-  JOIN dept_employees
-  ON employees.emp_no=dept_employees.emp_no
+  JOIN dept_emp
+  ON employees.emp_no=dept_emp.emp_no
     JOIN departments
-    ON dept_employees.dept_no=departments.dept_no
+    ON dept_emp.dept_no=departments.dept_no
 	WHERE departments.dept_name = 'Sales' or departments.dept_name = 'Development';
 	
 --8. In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
